@@ -3,5 +3,12 @@
 {% block title %} Welcome to Boggle {% endblock %}
 
 {% block content %}
-<h1>This is Boggle</h1>
+<section class="start-content container">
+    <p>Let's play the ultimate word search game!</p>
+    <form class="start-game" action="/game">
+        <button class="btn btn-color start-btn">Start the Game!</button>
+    </form>
+</section>
+
+
 {% endblock %}

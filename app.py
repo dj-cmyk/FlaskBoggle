@@ -16,3 +16,10 @@ def display_home_page():
 	'''display initial information about the game and button to start the game'''
 
 	return render_template('home.html')
+
+
+@app.route('/game')
+def display_game_board():
+    '''start the game by showing the game board, guess form, and list of words already guessed'''
+
+    return render_template('game.html')

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Welcome to Boggle {% endblock %}
+
+{% block second_nav %}
+<navbar class="nav-score navbar">
+    <h4>High Score:  <span class="high-score">0</span></h4>
+    <h4>Current Score:  <span class="curr-score">0</span></h4>
+</navbar>
+{% endblock %}
+
+{% block content %}
+<div class="game-sections">
+    <section class="gameboard">
+        BOARD SECTION
+    </section>
+    <section class="user-interaction">
+        USER FIELDS - guess word + hints
+    </section>
+    <section class="guess-history">
+        Words Guessed + Score of each word
+    </section>
+</div>
+{% endblock %}

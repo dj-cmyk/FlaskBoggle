@@ -1,0 +1,76 @@
+/* color palette:
+seashell - rgb(254, 245, 239)
+desert sand - rgb(228, 187, 151)
+hookers green - rgb(82, 121, 111)
+copper red - rgb(214, 104, 83)
+dark liver - rgb(88, 75, 83) */
+
+/* fonts:
+ACCENT - font-family: 'Abril Fatface', cursive;
+MAIN - font-family: 'Azeret Mono', monospace; */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(254, 245, 239);
+    color: rgb(88, 75, 83);
+    font-family: 'Azeret Mono', monospace;
+}
+
+.nav {
+    background-color: rgb(254, 245, 239);
+    color: rgb(88, 75, 83);
+    display: flex;
+    justify-content: center;
+}
+
+.nav h1 {
+    font-weight: bold;
+    font-size: 4em;
+}
+
+.nav-score {
+    background-color: rgb(82, 121, 111);
+    color: rgb(254, 245, 239);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Abril Fatface', cursive;
+}
+ .nav-score h4 {
+     margin: 5px 50px;
+ }
+
+ .start-content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 20px;
+ }
+
+ .btn-color {
+     background-color: rgb(214, 104, 83);
+     color: rgb(254, 245, 239);
+
+ }
+
+ .btn-color:hover {
+    border: 1px solid rgb(214, 104, 83); 
+    background-color: rgb(254, 245, 239);
+    color: rgb(214, 104, 83);
+ }
+
+.game-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 25px;
+    padding: 10px 0px;
+}
+
+.game-sections section {
+    text-align: center;
+}
