@@ -5,20 +5,44 @@
 {% block second_nav %}
 <navbar class="nav-score navbar">
     <h4>High Score:  <span class="high-score">0</span></h4>
-    <h4>Current Score:  <span class="curr-score">0</span></h4>
+    <h4>Current Score:  <span class="curr-score">{{ session['current_score'] }}</span></h4>
 </navbar>
 {% endblock %}
 
+
 {% block content %}
-<div class="game-sections">
+<div class="game-sections grid">
     <section class="gameboard">
-        BOARD SECTION
+        {% for row in game_board %}
+            <div class="row">
+            {% for column in row %}
+                <div class="board-square">
+                    {{ column }}
+                </div>
+            {% endfor %}
+            </div>
+        {% endfor %}
     </section>
     <section class="user-interaction">
-        USER FIELDS - guess word + hints
+        GUESS A WORD:
+        <form action="/game" method="POST">
+            <input type="text" name="guess" id="guess-text">
+            <button type="submit" class="btn-color btn" id="guess-btn">Guess</button>
+        </form>
+        {% block messages %}
+            {% for msg in get_flashed_messages() %}
+             <p> {{ msg }}</p>
+            {% endfor %}
+        {% endblock %}
     </section>
     <section class="guess-history">
-        Words Guessed + Score of each word
+        Scored Words:
+            <ul class="words-guessed" id="words-guessed">
+                {% for guess in session['guesses'] %}
+               <li>{{ guess[0] }}: {{ guess[1] }}</li>
+                {% endfor %}
+            </ul>
+       
     </section>
 </div>
 {% endblock %}
