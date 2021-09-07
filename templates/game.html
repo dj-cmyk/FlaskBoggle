@@ -4,7 +4,9 @@
 
 {% block second_nav %}
 <navbar class="nav-score navbar">
-    <h4>High Score:  <span class="high-score">0</span></h4>
+    <h4>High Score:  <span class="high-score">{{ session['high_score'] }}</span></h4>
+    <button class="btn btn-color timer-btn" id="timer-btn">Start Timer</button>
+    <h4 id="timer">Timer: <span id="timer-seconds">60</span></h4>
     <h4>Current Score:  <span class="curr-score">{{ session['current_score'] }}</span></h4>
 </navbar>
 {% endblock %}
@@ -23,26 +25,30 @@
             </div>
         {% endfor %}
     </section>
+
     <section class="user-interaction">
-        GUESS A WORD:
-        <form action="/game" method="POST">
+        <p class='guess'>GUESS A WORD:</p>
+        <form action="/game" method="POST" id="guess-form" class='guess'>
             <input type="text" name="guess" id="guess-text">
             <button type="submit" class="btn-color btn" id="guess-btn">Guess</button>
         </form>
-        {% block messages %}
-            {% for msg in get_flashed_messages() %}
-             <p> {{ msg }}</p>
-            {% endfor %}
-        {% endblock %}
+        <div class="guess-messages">
+            <!-- add and remove messages for user here -->
+        </div>
+        <div class="endgame-display">
+            <p>Game Over! Your score for round {{ session['games_played'] }} is: <span class="curr-score"></span></p>
+            <form class="reset-game" action="/endgame">
+                <button class="btn btn-color reset-btn">Play Again!</button>
+            </form>
+        </div>
     </section>
+
     <section class="guess-history">
-        Scored Words:
+        <div class="scored-words">Scored Words:
             <ul class="words-guessed" id="words-guessed">
-                {% for guess in session['guesses'] %}
-               <li>{{ guess[0] }}: {{ guess[1] }}</li>
-                {% endfor %}
+                <!-- add and removed scored words here -->
             </ul>
-       
+        </div>
     </section>
 </div>
 {% endblock %}

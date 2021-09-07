@@ -66,6 +66,7 @@ body {
 .game-sections {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
 }
 
 .gameboard {
@@ -93,9 +94,27 @@ body {
     margin: 5px;
 }
 
-.user-interaction, .guess-history {
+.user-interaction, .guess-messages {
+    justify-self: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+    font-size: 1.5em;
+    color: rgb(214, 104, 83);
+}   
+
+.scored-words {
+    font-size: 1.5em;
+    color: rgb(214, 104, 83);
+}
+
+.guess-history {
     justify-self: center;
     margin-top: 20px;
     list-style-type: none;
 }   
 
+.words {
+    justify-self: center;
+    font-size: 1.25em;
+}
